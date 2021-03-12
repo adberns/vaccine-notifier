@@ -32,10 +32,12 @@ def notify_for_new(pharmacy_info):
   for pharmacy in pharmacy_info:
     new_results.append(pharmacy['provider_location_id'])
 
+    # Just getting the string representations of these because I don't
+    # want to check for None types each time - might fix later
     if pharmacy['provider_location_id'] not in old_results:
-      notifications += pharmacy['provider_brand_name'] + ', ' \
-                       + pharmacy['name'] + ', ' \
-                       + pharmacy['address'] + ', ' + pharmacy['city'] + '\n'
+      notifications += str(pharmacy['name']) + ', ' + str(pharmacy['address']) \
+                       + ', ' + str(pharmacy['city']) \
+                       + ' (' + str(pharmacy['provider_brand_name']) + ')\n'
 
   with open('.vaccine_openings', 'w') as output_file:
     output_file.write('\n'.join(new_results) + '\n')
