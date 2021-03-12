@@ -1,0 +1,4 @@
+config.py
+__pycache__/
+*.swp
+.vaccine_openings

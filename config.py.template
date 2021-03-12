@@ -1,0 +1,6 @@
+FROM_ADDRESS = ''
+FROM_PASSWORD = ''
+
+STATE_ABBR = ''
+
+NOTIFY_LIST = ['']
