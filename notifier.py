@@ -37,7 +37,8 @@ def notify_for_new(pharmacy_info):
     if pharmacy['provider_location_id'] not in old_results:
       notifications += str(pharmacy['name']) + ', ' + str(pharmacy['address']) \
                        + ', ' + str(pharmacy['city']) \
-                       + ' (' + str(pharmacy['provider_brand_name']) + ')\n'
+                       + ' (' + str(pharmacy['provider_brand_name']) \
+                       + ') -- ' + str(pharmacy['url']) + '\n'
 
   with open('.vaccine_openings', 'w') as output_file:
     output_file.write('\n'.join(new_results) + '\n')
